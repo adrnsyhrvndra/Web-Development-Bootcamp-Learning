@@ -1,0 +1,3 @@
+sass --watch style.scss:../css/style.css sourcemap-none
+
+(arahkan ke style.css dan pastikan cmd nya direct ke file.scssnya)

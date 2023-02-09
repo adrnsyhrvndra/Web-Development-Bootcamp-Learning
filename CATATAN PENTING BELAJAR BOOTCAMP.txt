@@ -1,0 +1,48 @@
+CATATAN PENTING BELAJAR BOOTCAMP
+
+- Link web referensi belajar CSS : https://web.archive.org/web/20180819202235js_/http://seanhalpin.io/
+
+- Website untuk membuat dan mengatur favicon : www.favicon.cc
+
+- Website untuk mengambil color pallette warna yang bagus : colorhunt.co
+
+- CSS Debugging Extension Chrome
+1) Link Download : https://chrome.google.com/webstore/detail/pesticide-for-chrome/bakpbgckdnepkmkeaiomhmfcnejndkbi
+2) Jika tekan/hold ctrl maka akan muncul dibawah untuk detail debugging nya.
+
+- MARGIN AUTO
+1) margin: auto; : itu sama saja seperti membuat semua objek menjadi di tengah.
+
+- Position CSS
+1) Static   : artinya adalah dengan default html layoutnya atau mengikuti aturan html.
+2) Relative : kalau relative itu akan bermula dari aturan html/layout nya.jadi ketika misalnya digeser posisi awal nya akan tetap ada atau bertaha.
+	      ibaratkan jasad kalau rohnya digeser maka jasadnya tetep di posisi awal.
+3) Absolute : kalau absolut kebalikan dari relative,jadi parentnya atau jasadnya adalah ruangan.maksud ruangan adalah pembungkus/div/container atau apaupun.
+4) Fixed    : kalau fixed maka akan mengikuti posisinya jika misalkan kita scroll kebawah.
+
+- CSS Web safe font : agar mengetahui font-font yang aman dan bisa tampil dalam semua desktop.bisa dilihat di web www.cssfontstack.com
+
+- Font untuk agar import online dengan web https://fonts.google.com/
+
+- Web untuk mengenerate kalimat lorem ipsum : loremipsumgenerator.com
+
+- CSS FONT SIZE
+1) 1em sama dengan 16px.
+2) Dibandingkan px,% dan em,disarankan menggunakan rem karena tidak akan terikat dengan induk dan tidak rawan kesalahan,dan juga responsive.
+3) Cara menghitung dari pixel ke rem : misalkan kita ingin 40px.nah 1 em = 16px,maka dari itu tinggal dibagi saja : 40/16 = 2.5rem
+
+- FLOAT AND CLEAR
+1) Jadi kalau suatu pembungkus mempunyai dua objek dan objeknya itu ada di atas dan keduanya dibawah maka :
+   1a) Jika objek kedua kita kasih float:left misalkan.itu akan disebelah kanannya objek pertama.
+   1b) Kalau dikasih float right maka kebalikannya.
+   1c) Float itu ibaratkan bakal ikut aliran,nah sumber alirannya adalah dari objek pertama.
+2) Kalau clear itu kaya anti float,jadi misalkan tadi dikasih float left,lalu ada satu elemen di objek tersebut kita kasih clear:left; maka akan kebawah.
+3) Gunakan float jika perlu saja,dan jangan terlalu mengandalkannya sebagai positioning.
+
+- BIKIN BUTTON DENGAN CEPAT GENERATOR CSS : https://css3buttongenerator.com/
+
+- FRONT END CHALLENGE PRACTICE WEBSITE : https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3
+
+- WESBITE SEPERTI CODE PEN NAMUN BISA MEMASUKAN BOOTSTRAP : codeply.com
+
+- WEBSITE UNTUK NGAMBIL BEBERAPA COMPONENT YANG UDAH DI BIKIN PAKE BOOTSTRAP : https://bootsnipp.com/
