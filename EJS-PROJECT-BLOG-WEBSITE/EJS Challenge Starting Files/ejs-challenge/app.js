@@ -21,16 +21,41 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(express.static("public"));
 
+const mongoose = require('mongoose');
+
+//connect to MongoDB by specifying port to access MongoDB server
+
+main().catch(err => console.log(err));
+
+async function main() {
+
+    mongoose.set('strictQuery', false);
+
+    await mongoose.connect("mongodb://127.0.0.1/blogDB");
+
+};
+
+// ============================
+// Post Schema
+// ============================
+
+const postSchema = {
+  title: String,
+  content: String
+};
+
+const Post = mongoose.model("Post", postSchema);
+
 app.get("/",function(req,res) {
   
-  res.render("home",{
+  Post.find({}, function(err, posts){
 
-    startingContent: homeStartingContent,
-    postContent: posts
+    res.render("home", {
+      startingContent: homeStartingContent,
+      posts: posts
+      });
 
   });
-
-  
 
 });
 
@@ -62,42 +87,29 @@ app.get("/compose",function(req,res) {
 
 app.post("/compose",function(req,res) {
   
-  var inputPostTitle = req.body.postTitle;
+  const post = new Post({
+    title: req.body.postTitle,
+    content: req.body.postBody
+  });
 
-  var inputPostBody = req.body.postBody;
 
-  const post = {
-
-    title:inputPostTitle,
-    content:inputPostBody
-
-  };
-
-  posts.push(post);
-
-  res.redirect("/");
+  post.save(function(err){
+    if (!err){
+        res.redirect("/");
+    }
+  });
 
 })
 
-app.get("/posts/:postName",function(req,res) {
+app.get("/posts/:postId",function(req,res) {
   
-  const requestedTitle = _.lowerCase(req.params.postName);
+  const requestedPostId = req.params.postId;
 
-  posts.forEach(function(post) {
-    
-    const storedTitle = _.lowerCase(post.title);
-
-    if (storedTitle === requestedTitle) {
-      
-      res.render("post",{
-
-        title:post.title,
-        content:post.content
-
-      });
-
-    }
-
+  Post.findOne({_id: requestedPostId}, function(err, post){
+    res.render("post", {
+      title: post.title,
+      content: post.content
+    });
   });
 
 })
